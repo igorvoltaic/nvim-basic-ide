@@ -14,11 +14,11 @@ function M.config()
 
     api.config.mappings.default_on_attach(bufnr)
 
+    vim.keymap.set("n", "t", api.node.open.edit, opts "Open")
     vim.keymap.set("n", "l", api.node.open.edit, opts "Open")
     vim.keymap.set("n", "h", api.node.navigate.parent_close, opts "Close Directory")
     vim.keymap.set("n", "v", api.node.open.vertical, opts "Open: Vertical Split")
     vim.keymap.del("n", "<C-k>", { buffer = bufnr })
-    vim.keymap.set("n", "<S-k>", api.node.open.preview, opts "Open Preview")
   end
 
   local icons = require "user.icons"
@@ -26,6 +26,16 @@ function M.config()
   require("nvim-tree").setup {
     on_attach = my_on_attach,
     sync_root_with_cwd = true,
+    view = {
+      adaptive_size = true,
+      side = "left",
+    },
+    actions = {
+      open_file = {
+        quit_on_open = true,
+        resize_window = true,
+      }
+    },
     renderer = {
       add_trailing = false,
       group_empty = false,
