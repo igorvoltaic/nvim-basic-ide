@@ -6,7 +6,7 @@ local M = {
 }
 
 function M.config()
-  require('neogen').setup {}
+  require("neogen").setup {}
 end
 
 return M
