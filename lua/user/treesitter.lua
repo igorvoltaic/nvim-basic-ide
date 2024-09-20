@@ -30,6 +30,8 @@ function M.config()
   require("nvim-treesitter.configs").setup {
     ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python", "go" }, -- put the language you want in this array
     ignore_install = { "" },
+    modules = {},
+    auto_install = false,
     sync_install = false,
     highlight = {
       enable = true,
@@ -86,32 +88,6 @@ function M.config()
       },
     },
   }
-
-  -- local configs = require "nvim-treesitter.configs"
-  --
-  -- configs.setup {
-  --   -- modules = {
-  --   --
-  --   --
-  --   --   rainbow = {
-  --   --     enable = false,
-  --   --     query = {
-  --   --       "rainbow-parens",
-  --   --     },
-  --   --     strategy = require("ts-rainbow").strategy.global,
-  --   --     hlgroups = {
-  --   --       -- "TSRainbowRed",
-  --   --       "TSRainbowBlue",
-  --   --       -- "TSRainbowOrange",
-  --   --       -- "TSRainbowCoral",
-  --   --       "TSRainbowPink",
-  --   --       "TSRainbowYellow",
-  --   --       -- "TSRainbowViolet",
-  --   --       -- "TSRainbowGreen",
-  --   --     },
-  --   --   },
-  --   -- },
-  -- }
 end
 
 return M

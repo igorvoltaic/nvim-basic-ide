@@ -1,44 +1,32 @@
 local M = {
   "lewis6991/gitsigns.nvim",
   event = "BufEnter",
-  commit = "5a9a6ac29a7805c4783cda21b80a1e361964b3f2",
   cmd = "Gitsigns",
 }
 M.config = function()
   local icons = require "user.icons"
 
+  local wk = require "which-key"
+  wk.add {
+    { "<leader>gB", "<cmd>Gitsigns blame<cr>", desc = "Blame" },
+    { "<leader>gR", "<cmd>Gitsigns reset_buffer<cr>", desc = "Reset Buffer" },
+    { "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Git Diff" },
+    { "<leader>gj", "<cmd>Gitsigns next_hunk<cr>", desc = "Next Hunk" },
+    { "<leader>gk", "<cmd>Gitsigns prev_hunk<cr>", desc = "Prev Hunk" },
+    { "<leader>gl", "<cmd>Gitsigns blame_line<cr>", desc = "Blame Line" },
+    { "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview Hunk" },
+    { "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Reset Hunk" },
+    { "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>", desc = "Stage Hunk" },
+    { "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<cr>", desc = "Undo Stage Hunk" },
+  }
+
   require("gitsigns").setup {
     signs = {
-      add = {
-        hl = "GitSignsAdd",
-        text = icons.ui.BoldLineLeft,
-        numhl = "GitSignsAddNr",
-        linehl = "GitSignsAddLn",
-      },
-      change = {
-        hl = "GitSignsChange",
-        text = icons.ui.BoldLineLeft,
-        numhl = "GitSignsChangeNr",
-        linehl = "GitSignsChangeLn",
-      },
-      delete = {
-        hl = "GitSignsDelete",
-        text = icons.ui.TriangleShortArrowRight,
-        numhl = "GitSignsDeleteNr",
-        linehl = "GitSignsDeleteLn",
-      },
-      topdelete = {
-        hl = "GitSignsDelete",
-        text = icons.ui.TriangleShortArrowRight,
-        numhl = "GitSignsDeleteNr",
-        linehl = "GitSignsDeleteLn",
-      },
-      changedelete = {
-        hl = "GitSignsChange",
-        text = icons.ui.BoldLineLeft,
-        numhl = "GitSignsChangeNr",
-        linehl = "GitSignsChangeLn",
-      },
+      add = { text = icons.ui.BoldLineMiddle },
+      change = { text = icons.ui.BoldLineDashedMiddle },
+      delete = { text = icons.ui.TriangleShortArrowRight },
+      topdelete = { text = icons.ui.TriangleShortArrowRight },
+      changedelete = { text = icons.ui.BoldLineMiddle },
     },
     watch_gitdir = {
       interval = 1000,

@@ -1,13 +1,13 @@
 local M = {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
 }
 
 function M.config()
-  local null_ls = require "null-ls"
+  local none_ls = require "null-ls"
 
-  local formatting = null_ls.builtins.formatting
+  local formatting = none_ls.builtins.formatting
 
-  null_ls.setup {
+  none_ls.setup {
     sources = {
       formatting.stylua,
       formatting.prettier,
@@ -16,7 +16,7 @@ function M.config()
         -- extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
       },
       -- null_ls.builtins.diagnostics.eslint,
-      null_ls.builtins.completion.spell,
+      none_ls.builtins.completion.spell,
     },
   }
 end

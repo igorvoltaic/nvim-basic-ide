@@ -1,6 +1,6 @@
 local M = {
   "mfussenegger/nvim-dap",
-  commit = "6b12294a57001d994022df8acbe2ef7327d30587",
+  commit = "90616ae6ae40053103dc66872886fc26b94c70c8",
   event = "VeryLazy",
 }
 
@@ -13,15 +13,15 @@ function M.config()
   end
 
   dap.listeners.after.event_initialized["dapui_config"] = function()
-    dapui.open()
+    dapui.open({})
   end
 
   dap.listeners.before.event_terminated["dapui_config"] = function()
-    dapui.close()
+    dapui.close({})
   end
 
   dap.listeners.before.event_exited["dapui_config"] = function()
-    dapui.close()
+    dapui.close({})
   end
 
   dap.adapters.codelldb = {
@@ -58,8 +58,8 @@ M = {
   "ravenxrz/DAPInstall.nvim",
   commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de",
   config = function()
-    require("dap_install").setup {}
-    require("dap_install").config("python", {})
+    require("dap-install").setup {}
+    require("dap-install").config("python", {})
   end,
 }
 
