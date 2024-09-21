@@ -1,19 +1,15 @@
 ```
-    ✯                              .°•    |    
-    __     °    •                __      / \   
-   / /   ____ ___  ______  _____/ /_    | O |  
-  / /   / __ `/ / / / __ \/ ___/ __ \   | O |  
- / /___/ /_/ / /_/ / / / / /__/ / / /  /| | |\ 
-/_____/\__,_/\__,_/_/ /_/\___/_/ /_/  /_(.|.)_\
+░  ░░░░  ░░░      ░░░  ░░░░░░░░        ░░░      ░░░  ░░░░  ░░        ░░  ░░░░  ░
+▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒   ▒▒   ▒
+▓▓  ▓▓  ▓▓▓  ▓▓▓▓  ▓▓  ▓▓▓▓▓▓▓▓▓▓▓  ▓▓▓▓▓  ▓▓▓▓  ▓▓▓  ▓▓  ▓▓▓▓▓▓  ▓▓▓▓▓        ▓
+███    ████  ████  ██  ███████████  █████        ████    ███████  █████  █  █  █
+████  ██████      ███        █████  █████  ████  █████  █████        ██  ████  █
+                                                                                
 ```
 
 This config will provide a modular starting point for anyone looking to use Neovim as their IDE. It is meant to be simple and easy to understand and extend. Use it as a base for your own config or just take individual pieces.
 
-All the included plugins are pinned to a version that ensures they are compatible and will not update potentially introducing errors into your config. For every Neovim release I will update this repo along with the community to keep it up to date with the newest versions.
-
-As I mentioned, this config is meant as a starting point for people new to Neovim who want a familiar IDE experience. The config has a very simple structure that makes it easy to add new plugins.
-
-## Install Neovim 0.9
+## Install Neovim 0.10
 
 You can install Neovim with your package manager e.g. brew, apt, pacman etc.. bus remember that when you update your packages Neovim may be upgraded to a newer version.
 
@@ -24,7 +20,7 @@ If you would like to make sure Neovim only updates when you want it to than I re
 Make sure to remove or backup your current `nvim` directory
 
 ```sh
-git clone https://github.com/LunarVim/Launch.nvim.git ~/.config/nvim
+git clone git@github.com:igorvoltaic/nvim-basic-ide.git ~/.config/nvim
 ```
 
 Run `nvim` and wait for the plugins to be installed
@@ -78,15 +74,10 @@ We will also need `ripgrep` for Telescope to work:
 
 ---
 
-**NOTE** make sure you have [node](https://nodejs.org/en/) installed, I recommend a node manager like [fnm](https://github.com/Schniz/fnm).
-
 ## Fonts
 
-I recommend using the following repo to get a "Nerd Font" (Font that supports icons)
+Fonts that support icons is required. I recommend using [this "Nerd Font" repo](https://github.com/ronniedroid/getnf).
 
-[getnf](https://github.com/ronniedroid/getnf)
-
-**NOTE** Some are already setup as examples, remove them if you want
 
 ---
 
