@@ -1,11 +1,9 @@
-```
 ░  ░░░░  ░░░      ░░░  ░░░░░░░░        ░░░      ░░░  ░░░░  ░░        ░░  ░░░░  ░
 ▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒   ▒▒   ▒
 ▓▓  ▓▓  ▓▓▓  ▓▓▓▓  ▓▓  ▓▓▓▓▓▓▓▓▓▓▓  ▓▓▓▓▓  ▓▓▓▓  ▓▓▓  ▓▓  ▓▓▓▓▓▓  ▓▓▓▓▓        ▓
 ███    ████  ████  ██  ███████████  █████        ████    ███████  █████  █  █  █
 ████  ██████      ███        █████  █████  ████  █████  █████        ██  ████  █
                                                                                 
-```
 
 This config will provide a modular starting point for anyone looking to use Neovim as their IDE. It is meant to be simple and easy to understand and extend. Use it as a base for your own config or just take individual pieces.
 
