@@ -1,10 +1,10 @@
 local M = {
   "nvim-tree/nvim-tree.lua",
   event = "VeryLazy",
-  commit = "40b9b887d090d5da89a84689b4ca0304a9649f62",
 }
 
 function M.config()
+
   local function my_on_attach(bufnr)
     local api = require "nvim-tree.api"
 
@@ -25,16 +25,20 @@ function M.config()
 
   require("nvim-tree").setup {
     on_attach = my_on_attach,
+    hijack_netrw = false,
     sync_root_with_cwd = true,
     view = {
-      adaptive_size = true,
-      side = "left",
-    },
-    actions = {
-      open_file = {
-        quit_on_open = true,
-        resize_window = true,
-      }
+      view = {
+        adaptive_size = true,
+        side = "left",
+      },
+      actions = {
+        open_file = {
+          quit_on_open = true,
+          resize_window = true,
+        },
+        relativenumber = true,
+      },
     },
     renderer = {
       add_trailing = false,

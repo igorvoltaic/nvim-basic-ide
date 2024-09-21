@@ -46,10 +46,20 @@ function M.config()
 
   wk.add {
     { "<leader>/", "<Plug>(comment_toggle_linewise_current)", desc = "Comment", nowait = true, remap = false },
+    { "<leader>/", "<Plug>(comment_toggle_linewise_visual)", desc = "Comment", mode="v", nowait = true, remap = false },
+    { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Explorer", nowait = true, remap = false },
+    { "<leader>q", "<cmd>confirm q<CR>", desc = "Quit", nowait = true, remap = false },
+    { "<leader>w", "<cmd>:w<CR>", desc = "Write changes to file", nowait = true, remap = false },
+    { "<leader>h", "<cmd>nohlsearch<CR>", desc = "No Highlight", nowait = true, remap = false },
+    { "Q", "<cmd>lua require('bufdelete').bufdelete(0, false)<cr>", desc = "Quit", nowait = true, remap = false },
+
+
     { "<leader>T", group = "Treesitter", nowait = true, remap = false },
     { "<leader>Ti", ":TSConfigInfo<cr>", desc = "Info", nowait = true, remap = false },
+
     { "<leader>b", group = "Buffers", nowait = true, remap = false },
     { "<leader>bb", "<cmd>Telescope buffers previewer=false<cr>", desc = "Find", nowait = true, remap = false },
+
     { "<leader>d", group = "Debug", nowait = true, remap = false },
     { "<leader>dC", "<cmd>lua require'dap'.run_to_cursor()<cr>", desc = "Run To Cursor", nowait = true, remap = false },
     { "<leader>dU", "<cmd>lua require'dapui'.toggle({reset = true})<cr>", desc = "Toggle UI", nowait = true, remap = false },
@@ -65,7 +75,7 @@ function M.config()
     { "<leader>ds", "<cmd>lua require'dap'.continue()<cr>", desc = "Start", nowait = true, remap = false },
     { "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", desc = "Toggle Breakpoint", nowait = true, remap = false },
     { "<leader>du", "<cmd>lua require'dap'.step_out()<cr>", desc = "Step Out", nowait = true, remap = false },
-    { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Explorer", nowait = true, remap = false },
+
     { "<leader>f", group = "Find", nowait = true, remap = false },
     { "<leader>fC", "<cmd>Telescope commands<cr>", desc = "Commands", nowait = true, remap = false },
     { "<leader>fH", "<cmd>Telescope highlights<cr>", desc = "Highlights", nowait = true, remap = false },
@@ -82,11 +92,19 @@ function M.config()
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent File", nowait = true, remap = false },
     { "<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "Find String", nowait = true, remap = false },
     { "<leader>ft", "<cmd>Telescope live_grep<cr>", desc = "Find Text", nowait = true, remap = false },
-    { "<leader>gC", "<cmd>Telescope git_bcommits<cr>", desc = "Checkout commit(for current file)", nowait = true, remap = false },
-    { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch", nowait = true, remap = false },
-    { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit", nowait = true, remap = false },
-    { "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open changed file", nowait = true, remap = false },
-    { "<leader>h", "<cmd>nohlsearch<CR>", desc = "No Highlight", nowait = true, remap = false },
+
+    { "<leader>g", group = "Gitsings", nowait = true, remap = false },
+    { "<leader>gB", "<cmd>Gitsigns blame<cr>", desc = "Blame" },
+    { "<leader>gR", "<cmd>Gitsigns reset_buffer<cr>", desc = "Reset Buffer" },
+    { "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Git Diff" },
+    { "<leader>gj", "<cmd>Gitsigns next_hunk<cr>", desc = "Next Hunk" },
+    { "<leader>gk", "<cmd>Gitsigns prev_hunk<cr>", desc = "Prev Hunk" },
+    { "<leader>gl", "<cmd>Gitsigns blame_line<cr>", desc = "Blame Line" },
+    { "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview Hunk" },
+    { "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Reset Hunk" },
+    { "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>", desc = "Stage Hunk" },
+    { "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<cr>", desc = "Undo Stage Hunk" },
+
     { "<leader>l", group = "LSP", nowait = true, remap = false },
     { "<leader>lI", "<cmd>Mason<cr>", desc = "Mason Info", nowait = true, remap = false },
     { "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols", nowait = true, remap = false },
@@ -102,6 +120,7 @@ function M.config()
     { "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename", nowait = true, remap = false },
     { "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols", nowait = true, remap = false },
     { "<leader>lw", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics", nowait = true, remap = false },
+
     { "<leader>p", group = "Plugins", nowait = true, remap = false },
     { "<leader>pS", "<cmd>Lazy clear<cr>", desc = "Status", nowait = true, remap = false },
     { "<leader>pc", "<cmd>Lazy clean<cr>", desc = "Clean", nowait = true, remap = false },
@@ -111,7 +130,7 @@ function M.config()
     { "<leader>pp", "<cmd>Lazy profile<cr>", desc = "Profile", nowait = true, remap = false },
     { "<leader>ps", "<cmd>Lazy sync<cr>", desc = "Sync", nowait = true, remap = false },
     { "<leader>pu", "<cmd>Lazy update<cr>", desc = "Update", nowait = true, remap = false },
-    { "<leader>q", "<cmd>confirm q<CR>", desc = "Quit", nowait = true, remap = false },
+
     { "<leader>t", group = "Tab", nowait = true, remap = false },
     { "<leader>tA", "<cmd>tabnew %<cr>", desc = "New Tab", nowait = true, remap = false },
     { "<leader>ta", "<cmd>$tabnew<cr>", desc = "New Empty Tab", nowait = true, remap = false },

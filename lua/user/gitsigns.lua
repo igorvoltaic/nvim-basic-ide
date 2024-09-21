@@ -6,20 +6,6 @@ local M = {
 M.config = function()
   local icons = require "user.icons"
 
-  local wk = require "which-key"
-  wk.add {
-    { "<leader>gB", "<cmd>Gitsigns blame<cr>", desc = "Blame" },
-    { "<leader>gR", "<cmd>Gitsigns reset_buffer<cr>", desc = "Reset Buffer" },
-    { "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Git Diff" },
-    { "<leader>gj", "<cmd>Gitsigns next_hunk<cr>", desc = "Next Hunk" },
-    { "<leader>gk", "<cmd>Gitsigns prev_hunk<cr>", desc = "Prev Hunk" },
-    { "<leader>gl", "<cmd>Gitsigns blame_line<cr>", desc = "Blame Line" },
-    { "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview Hunk" },
-    { "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Reset Hunk" },
-    { "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>", desc = "Stage Hunk" },
-    { "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<cr>", desc = "Undo Stage Hunk" },
-  }
-
   require("gitsigns").setup {
     signs = {
       add = { text = icons.ui.BoldLineMiddle },

@@ -28,9 +28,6 @@ keymap("v", ">", ">gv", opts)
 
 keymap("x", "p", [["_dP]])
 
--- Write changes to file
-keymap("n", "<leader>w", ":w<cr>", opts)
-
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
