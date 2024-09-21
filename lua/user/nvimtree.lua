@@ -28,16 +28,14 @@ function M.config()
     hijack_netrw = false,
     sync_root_with_cwd = true,
     view = {
-      view = {
-        adaptive_size = true,
-        side = "left",
-      },
-      actions = {
-        open_file = {
-          quit_on_open = true,
-          resize_window = true,
-        },
-        relativenumber = true,
+      adaptive_size = true,
+      side = "left",
+      relativenumber = false,
+    },
+    actions = {
+      open_file = {
+        quit_on_open = true,
+        resize_window = true,
       },
     },
     renderer = {
