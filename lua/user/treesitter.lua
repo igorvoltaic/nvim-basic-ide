@@ -1,91 +1,71 @@
 local M = {
   "nvim-treesitter/nvim-treesitter",
   event = { "BufReadPost", "BufNewFile" },
-  commit = "afa103385a2b5ef060596ed822ef63276ae88016",
   build = ":TSUpdate",
   dependencies = {
     {
       "nvim-treesitter/nvim-treesitter-textobjects",
       event = "VeryLazy",
-      commit = "78c49ca7d2f7ccba2115c11422c037713c978ad1",
     },
     {
       "JoosepAlviste/nvim-ts-context-commentstring",
       event = "VeryLazy",
-      commit = "92e688f013c69f90c9bbd596019ec10235bc51de",
     },
     {
       "windwp/nvim-ts-autotag",
       event = "VeryLazy",
-      commit = "6be1192965df35f94b8ea6d323354f7dc7a557e4",
     },
     {
       "windwp/nvim-autopairs",
       event = "InsertEnter",
-      commit = "f6c71641f6f183427a651c0ce4ba3fb89404fa9e",
     },
   },
 }
 function M.config()
-  require("nvim-treesitter.configs").setup {
-    ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python", "go" }, -- put the language you want in this array
-    ignore_install = { "" },
+  require'nvim-treesitter.configs'.setup {
+    -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+    ensure_installed = {
+      "c", "lua", "vim", "vimdoc", "query",
+      "markdown", "markdown_inline", "bash", "python", "go"
+    },
+
     modules = {},
-    auto_install = false,
+    -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
-    highlight = {
-      enable = true,
-      disable = { "markdown" },
-      additional_vim_regex_highlighting = false,
-    },
 
-    indent = { enable = true },
-
-    matchup = {
-      enable = { "astro" },
-      disable = { "lua" },
-    },
+    -- Automatically install missing parsers when entering buffer
+    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+    auto_install = true,
 
     autotag = { enable = true },
+    -- autopairs = { enable = true },
 
-    context_commentstring = {
+    -- context_commentstring = {
+    --   enable = true,
+    --   enable_autocmd = false,
+    -- },
+
+
+    -- List of parsers to ignore installing (or "all")
+    ignore_install = { "javascript" },
+
+    ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
+    -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+
+    highlight = {
       enable = true,
-      enable_autocmd = false,
-    },
 
-    autopairs = { enable = true },
+      -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+      -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
+      -- the name of the parser)
+      -- list of language that will be disabled
+      disable = {},
 
-    textobjects = {
-      select = {
-        enable = true,
-        -- Automatically jump forward to textobj, similar to targets.vim
-        lookahead = true,
-        keymaps = {
-          -- You can use the capture groups defined in textobjects.scm
-          ["af"] = "@function.outer",
-          ["if"] = "@function.inner",
-          ["at"] = "@class.outer",
-          ["it"] = "@class.inner",
-          ["ac"] = "@call.outer",
-          ["ic"] = "@call.inner",
-          ["aa"] = "@parameter.outer",
-          ["ia"] = "@parameter.inner",
-          ["al"] = "@loop.outer",
-          ["il"] = "@loop.inner",
-          ["ai"] = "@conditional.outer",
-          ["ii"] = "@conditional.inner",
-          ["a/"] = "@comment.outer",
-          ["i/"] = "@comment.inner",
-          ["ab"] = "@block.outer",
-          ["ib"] = "@block.inner",
-          ["as"] = "@statement.outer",
-          ["is"] = "@scopename.inner",
-          ["aA"] = "@attribute.outer",
-          ["iA"] = "@attribute.inner",
-          ["aF"] = "@frame.outer",
-          ["iF"] = "@frame.inner",
-        },
-      },
+      -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+      -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+      -- Using this option may slow down your editor, and you may see some duplicate highlights.
+      -- Instead of true it can also be a list of languages
+      additional_vim_regex_highlighting = false,
     },
   }
 end

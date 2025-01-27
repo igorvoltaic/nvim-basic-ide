@@ -53,4 +53,4 @@ vim.g.netrw_mouse = 2
 vim.g.mapleader = [[ ]]
 
 -- vim.g.python3_host_prog = "$HOMEBREW_PREFIX/bin/python3"
-vim.g.python3_host_prog = "python3"
+vim.g.python3_host_prog = "/Users/voltaic/virtualenvs/pynvim/bin/python3"
