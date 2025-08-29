@@ -69,3 +69,17 @@ brew install ripgrep  # macosx
 ## Included plugins
 
 All included and installed plugins can be found in [lazy-lock.json](./lazy-lock.json)
+
+## Useful links
+
+[Lanch.nvim](https://github.com/LunarVim/Launch.nvim)
+: Modular starting point for Neovim IDE
+
+[Kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+: Guide for your own Neovim configuration
+
+[radleylewis/nvim](https://github.com/radleylewis/nvim)
+: NeoVim for software development setup guide
+
+[radleylewis/nvim-lite](https://github.com/radleylewis/nvim-lite)
+: Featureful Neovim config without plugins
