@@ -59,6 +59,7 @@ require('lazy').setup({
   require 'plugins.blink',
   require 'plugins.todo-comments',
   require 'plugins.mini-nvim',
+  require 'plugins.nvim-surround',
   require 'plugins.nvim-treesitter',
   require 'plugins.nvim-lint',
   require 'plugins.nvim-tree',
