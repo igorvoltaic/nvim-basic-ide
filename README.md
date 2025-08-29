@@ -37,9 +37,7 @@ alias v=nvim
 
 ## Optional installs
 
-### If you don't have support for copy/paste
-
-- On Ubuntu
+### If you don't have support for copy/paste on Ubuntu
 
 ```shell
 sudo apt install xsel # for X11
@@ -47,8 +45,6 @@ sudo apt install wl-clipboard # for wayland
 ```
 
 ### If you need Python and Node support
-
-Neovim python support
 
 ```shell
 pip install pynvim
