@@ -70,7 +70,10 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 -- the number of spaces inserted for each indentation
-vim.opt.shiftwidth = 2
+vim.o.shiftwidth = 4
 
 -- insert 2 spaces for a tab
-vim.opt.tabstop = 2
+vim.o.tabstop = 1
+
+-- do not wrap lines
+vim.o.wrap = true
