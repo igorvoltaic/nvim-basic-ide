@@ -68,4 +68,4 @@ brew install ripgrep  # macosx
 
 ## Included plugins
 
-All included and installed plugins can be found in [lazy-lock.json](`./lazy-lock.json`)
+All included and installed plugins can be found in [lazy-lock.json](./lazy-lock.json)
