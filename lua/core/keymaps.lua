@@ -2,6 +2,9 @@ local keymap = require('core.utils').keymap
 
 keymap('n', '<leader>w', '<cmd>w<CR>', { desc = '[W]rite current buffer' })
 
+-- if 'timeoutlen' is low enough that causes occasional usage of |s| key
+keymap({ 'n', 'x' }, 's', '<Nop>')
+
 -- Stay in indent mode
 keymap('v', '<', '<gv')
 keymap('v', '>', '>gv')
