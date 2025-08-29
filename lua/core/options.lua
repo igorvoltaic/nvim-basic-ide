@@ -76,4 +76,4 @@ vim.o.shiftwidth = 4
 vim.o.tabstop = 1
 
 -- do not wrap lines
-vim.o.wrap = true
+vim.o.wrap = false
