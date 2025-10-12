@@ -73,7 +73,10 @@ vim.o.confirm = true
 vim.o.shiftwidth = 4
 
 -- insert 2 spaces for a tab
-vim.o.tabstop = 1
+vim.o.tabstop = 2
+
+-- use spaces instead of tabs
+vim.o.expandtab = true
 
 -- do not wrap lines
 vim.o.wrap = false

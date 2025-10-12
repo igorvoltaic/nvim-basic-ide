@@ -1,6 +1,6 @@
 --[[
 
-	Compiled together by Igor Voltaic
+    Compiled together by Igor Voltaic
 
 --]]
 

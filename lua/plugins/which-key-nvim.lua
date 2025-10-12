@@ -3,6 +3,12 @@ return {
   'folke/which-key.nvim',
   event = 'VimEnter', -- Sets the loading event to 'VimEnter'
   opts = {
+    triggers = {
+      -- { '<auto>', mode = 'nixsotc' },
+      { '<leader>', mode = { 'n', 'v' } },
+      { 's', mode = { 'n', 'v' } },
+      { 'gr', mode = { 'n', 'v' } },
+    },
     -- delay between pressing a key and opening which-key (milliseconds)
     -- this setting is independent of vim.o.timeoutlen
     delay = 0,
